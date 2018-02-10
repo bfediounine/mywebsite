@@ -1,0 +1,34 @@
+body {
+	background-image: url('bg1.jpg');
+}
+
+#header {
+	background-color: #BC8FA0; /* rosybrown */
+	border-bottom-style: groove;
+	border-bottom-color; grey;
+	font-family: Courier New;
+	font-size: 20px;
+	letter-spacing: 2px;
+	padding: 50px;
+	text-shadow: 1px 1px grey;
+	width: 100%;
+}
+
+#header > span {
+	margin-left: 30%;
+}
+
+#header > ul {
+	display: inline;
+	float: right;
+	list-style-type: none;
+	margin-right: 5%;
+	margin-bottom: 10%;
+}
+
+#header > ul > li {
+	padding: 20px;
+	background-color: #BCA0D0;
+	display: inline;
+	text-align: center;
+}
