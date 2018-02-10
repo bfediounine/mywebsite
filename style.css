@@ -1,5 +1,5 @@
 body {
-	background-image: url('bg1.jpg');
+	background-image: url('images/bg1.jpg');
 }
 
 #header {
@@ -31,4 +31,46 @@ body {
 	background-color: #BCA0D0;
 	display: inline;
 	text-align: center;
+}
+
+#miscellaneous {
+	float: left;
+	font-family: sans-serif;
+	margin-top: 50px;
+	position: absolute;
+}
+
+#miscellaneous > span {
+	background-image: url('images/bg2crop.jpg');
+	font-size: 20px;
+	text-align: left;
+	padding: 10px;
+	padding-right: 20px;
+	border: round;
+}
+
+#miscellaneous > ul {
+	list-style-type: none;
+	width: 200px;
+}
+
+#miscellaneous > ul > li {
+	margin: 5px;
+	padding: 20px;
+	background-color: #BDA0A0;
+	text-align: center;
+	-webkit-animation: unset;
+	-moz-animation: unset;
+}
+
+@-webkit-keyframes miscButton {
+	0% { background-color: #BDA0A0; }
+	50% { background-color: #BDAACA; }
+	100% { background-color: #BDA0A0; }
+}
+
+@-moz-keyframes miscButton {
+	0% { background-color: #BDA0A0; }
+	50% { background-color: #BDAACA; }
+	100% { background-color: #BDA0A0; }
 }
