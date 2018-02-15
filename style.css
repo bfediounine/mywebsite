@@ -23,13 +23,13 @@ body {
 	margin: 15% auto;
 	padding: 20px;
 	border: 1px solid #888;
-	height: 25%;
-	width: 20%;
-	text-decoration: none;
+	height: 30%;
+	width: 15%;
 }
 
-.modal-content input, .modal-content span {
-	margin-top: 15px;
+.modal-content input, .modal-content a {
+	margin-top: 20px;
+	text-decoration: none;
 }
 
 #newsubmit:focus {
@@ -42,6 +42,9 @@ body {
 	border-radius: 5px;
 }
 
+#newname, #newpass {
+	color: slategrey;
+}
 #newname:focus, #newpass:focus {
 	border: solid orange;
 	border-radius: 5px;
