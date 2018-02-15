@@ -14,15 +14,31 @@
 				<li>About Me</li>
 			</ul>
 		</div>
+
+		<!-- modal user input form, default hidden on page -->
+		<div id="newUser" class="modal">
+			<div class="modal-content">
+				<span class="close">&times;</span>	
+				<form action="http://localhost:8080/newuser" method="post">
+					<a href="/">Have an account?</a><br>
+					<input type="text" id="newname" name="name" value="Email or username"/><br>
+					<input type="text" id="newpass" name="pass" value="Password"/><br>
+					<div>
+						<input type="submit" id="newsubmit" value="Submit"> 
+					</div>
+				</form>
+			</div>		
+		</div>		
+
 		<div id="miscellaneous">
 			<span>Miscellaneous</span>
 			<ul hidden>
-				<li>Item 1</li>
+				<li>New User</li>
 				<li>Item 2</li>
 				<li>Item 3</li>
 				<li>Item 4</li>
 			</ul>
-		</div>
+		</div> 
 	</body>
 </html>
 

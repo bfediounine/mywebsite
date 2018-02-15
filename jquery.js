@@ -3,8 +3,14 @@ $(document).ready(function() {
 	var miscUls = $("#miscellaneous").find("ul");
 	var proj = headUls.find("li").first();
 	var about = headUls.find("li").last();
+	var modal = document.getElementById("newUser");
 
 	var d = new Date(); // needed for fancy box cosmetics
+
+	var newname = document.getElementById("newname"),
+		newpass = document.getElementById("newpass");
+	newname.value = newname.defaultValue;
+	newpass.value = newpass.defaultValue;
 
 	headUls.hide();
 	$("#header").fadeIn("slow");
@@ -41,5 +47,18 @@ $(document).ready(function() {
 		$(this).css("background-color", "#BDA0A0");
 		$(this).css("-webkit-animation", "unset");
 		$(this).css("-moz-animation", "unset");
+	});
+
+	miscUls.children('li').first().click(function() {
+		modal.style.display = "block";
+	});
+
+	$("span.close").click(function() {
+		modal.style.display = "none";
+	});
+
+	$(window).click(function(event) {
+		if (event.target == modal)
+			modal.style.display = "none";
 	});
 });
