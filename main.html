@@ -5,6 +5,7 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="jquery.js"></script>
 		<link rel="stylesheet" href="style.css">
+		<title>S A C R E D</title>
 	</head>
 	<body>
 		<div id="header" hidden>
@@ -21,8 +22,10 @@
 				<span class="close">&times;</span>	
 				<form action="http://localhost:8080/newuser" method="post">
 					<a href="/">Have an account?</a><br>
-					<input type="text" id="newname" name="name" value="Email or username"/><br>
-					<input type="text" id="newpass" name="pass" value="Password"/><br>
+					<div id="newUserValues">
+						<input type="text" id="newname" name="name" value="Email or username"/><br>
+						<input type="text" id="newpass" name="pass" value="Password"/><br>
+					</div>
 					<div>
 						<input type="submit" id="newsubmit" value="Submit"> 
 					</div>

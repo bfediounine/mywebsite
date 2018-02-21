@@ -7,10 +7,12 @@ $(document).ready(function() {
 
 	var d = new Date(); // needed for fancy box cosmetics
 
-	var newname = document.getElementById("newname"),
-		newpass = document.getElementById("newpass");
-	newname.value = newname.defaultValue;
-	newpass.value = newpass.defaultValue;
+	var $nuserdiv = document.getElementById("newuservalue"),
+		$nname = document.getElementById("newname"),
+		$npass = document.getElementById("newpass"),
+		$nsub = document.getElementById("newsubmit");
+	$nname.value = $nname.defaultValue;
+	$npass.value = $npass.defaultValue;
 
 	headUls.hide();
 	$("#header").fadeIn("slow");
@@ -60,5 +62,48 @@ $(document).ready(function() {
 	$(window).click(function(event) {
 		if (event.target == modal)
 			modal.style.display = "none";
+	});
+
+	/* $nsub.click(function(event) {
+		event.preventDefault();
+		console.log("Making POST request...");
+		$.ajax({
+			url: "http://localhost:8080/newuser",
+			headers: {"Content-type": "application/json"},
+			method: "POST",
+			data: JSON.stringify({"name": $nname.val(),
+				"pass": $npass.val()}),
+			success: function(response) {
+				console.log(response);
+			},
+			error: function(jqXHR, status, errorThrown) {
+				console.log(jqXHR);
+			}
+		});
+		console.log("POST request complete.");
+		// $(this).focusout();
+	});  
+	
+	$nuserdiv.children().focusin(function() {
+		$(this).value = "";
+	});
+	$nuserdiv.children().focusout(function() {
+		if ($(this).value === "")
+			$this.value = $(this).defaultValue;
+	}); */
+
+	$nname.select(function() {
+		alert("check");
+		$(this).val("");
+	});
+	$("newname").hover(function() {
+		alert("check");
+	}, function() {
+		alert("check");
+	});
+
+	$nname.focusout(function() {
+		if ($(this).value === "")
+			$this.value = $(this).defaultValue;
 	});
 });
