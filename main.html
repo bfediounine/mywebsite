@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<meta charset="UTF-8">
+		<title>S A C R E D</title>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 		<script src="jquery.js"></script>
 		<link rel="stylesheet" href="style.css">
-		<title>S A C R E D</title>
+		<link rel="icon" href="images/flower.ico">
 	</head>
 	<body>
 		<div id="header" hidden>
@@ -20,11 +22,11 @@
 		<div id="newUser" class="modal">
 			<div class="modal-content">
 				<span class="close">&times;</span>	
-				<form action="http://localhost:8080/newuser" method="post">
+				<form id="newuserform" action="http://localhost:8080/newuser">
 					<a href="/">Have an account?</a><br>
 					<div id="newUserValues">
-						<input type="text" id="newname" name="name" value="Email or username"/><br>
-						<input type="text" id="newpass" name="pass" value="Password"/><br>
+						<input type="text" id="newname" name="name" placeholder="Email or username"/><br>
+						<input type="text" id="newpass" name="pass" placeholder="Password"/><br>
 					</div>
 					<div>
 						<input type="submit" id="newsubmit" value="Submit"> 

@@ -7,12 +7,13 @@ $(document).ready(function() {
 
 	var d = new Date(); // needed for fancy box cosmetics
 
-	var $nuserdiv = document.getElementById("newuservalue"),
-		$nname = document.getElementById("newname"),
-		$npass = document.getElementById("newpass"),
-		$nsub = document.getElementById("newsubmit");
-	$nname.value = $nname.defaultValue;
-	$npass.value = $npass.defaultValue;
+	var $nuserdiv = $("#newuservalue"),
+		$nname = $("#newname"),
+		$npass = $("#newpass"),
+		$nsub = $("#newsubmit"),
+		$nform = $("#newuserform");
+	$nname.val('');
+	$npass.val('');
 
 	headUls.hide();
 	$("#header").fadeIn("slow");
@@ -64,46 +65,43 @@ $(document).ready(function() {
 			modal.style.display = "none";
 	});
 
-	/* $nsub.click(function(event) {
-		event.preventDefault();
-		console.log("Making POST request...");
-		$.ajax({
-			url: "http://localhost:8080/newuser",
-			headers: {"Content-type": "application/json"},
-			method: "POST",
-			data: JSON.stringify({"name": $nname.val(),
-				"pass": $npass.val()}),
-			success: function(response) {
-				console.log(response);
-			},
-			error: function(jqXHR, status, errorThrown) {
-				console.log(jqXHR);
-			}
-		});
-		console.log("POST request complete.");
-		// $(this).focusout();
+	$nform.submit(function(event) {
+		if (validateForm()) {
+			alert("Thank you for registering. Visit your profile page for settings.");
+			event.preventDefault();
+			console.log("Making POST request...");
+			$.ajax({
+				url: "http://localhost:8080/newuser",
+				headers: {"Content-type": "application/json"},
+				method: "POST",
+				data: JSON.stringify({"name": $nname.val(),
+					"pass": $npass.val()}),
+				success: function(response) {
+					console.log(response);
+				},
+				error: function(jqXHR, status, errorThrown) {
+					console.log(jqXHR);
+				}
+			});
+			console.log("POST request complete.");
+		} else alert("Invalid username or password.");
+		$(this).focusout();
 	});  
 	
-	$nuserdiv.children().focusin(function() {
+	/* $nuserdiv.children().focusin(function() {
 		$(this).value = "";
 	});
 	$nuserdiv.children().focusout(function() {
 		if ($(this).value === "")
 			$this.value = $(this).defaultValue;
 	}); */
-
-	$nname.select(function() {
-		alert("check");
-		$(this).val("");
-	});
-	$("newname").hover(function() {
-		alert("check");
-	}, function() {
-		alert("check");
-	});
-
-	$nname.focusout(function() {
-		if ($(this).value === "")
-			$this.value = $(this).defaultValue;
-	});
 });
+
+// form validator TODO
+function validateForm() {
+	alert(document.forms["newuserform"]["newname"].value);
+	return true;
+}
+
+
+
